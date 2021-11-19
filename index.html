@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>CitaApp</title>
+</head>
+
+<body> <h1 class="card-title text-center pb-2">EPS Honesta S.A</h1>
+    <header class="justify-content-center">
+       
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Registro</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Citas</button>
+            </li>
+          </ul>
+          <div class="tab-content justify-content-center" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <form class="border border-dark rounded container m-4 pb-5" id="formulario">
+                    <div class="row p-4">
+                      <div class="py-2">Nombre</div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Nombres" aria-label="First name" id="nombres" required>
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Apellidos" aria-label="Last name" id="apellidos"
+                          required>
+                      </div>
+                    </div>
+                    <div class="mb-3 mx-4">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nombre@email.com"
+                        aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3 mx-4">
+                      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <button type="submit px-4" class="btn btn-primary mx-4">Registrarse</button>
+                  </form>
+
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                
+            <div class="form-group row">
+                <label class="label col-form-label col-sm-4 col-lg-2">Buscar por nombre</label>
+                <div class="mb-4 mb-lg-0 col">
+                    <input id="inputBuscar" class="form-control">
+                </div>
+                
+                <button id="btnBuscar" class="btn col-sm-4 col-lg-2">Buscar</button>
+            </div>
+            <div id="busqueda"></div>
+
+
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form id="formularioR">
+                            <h1 class="card-title text-center">Agregar citas</h1>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Nombre</label>
+                                <div class="mb-4 mb-lg-0">
+                                    <input type="text" id="nombre" name="nombre" class="form-control"
+                                        placeholder="Ingresa tu nombre">
+                                </div>
+                            </div>
+            
+                            <div class="form-group row mt-3">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Fecha</label>
+                                <div class="form-group col-sm-8 col-lg-4">
+                                    <input type="date" id="fecha" name="fecha" class="form-control">
+                                </div>
+            
+                                <label class="col-sm-4 col-lg-2 col-form-label">Hora</label>
+                                <div class="form-group col-sm-8 col-lg-4">
+                                    <input type="time" id="hora" name="hora" class="form-control">
+                                </div>
+                            </div>
+            
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Sintomas</label>
+                                <div class="form-group ">
+                                    <textarea name="sintomas" id="sintomas" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <div class=" card mt-5" id="listar">
+                    <div>
+                        <h2 class="card-title text-center">Agenda</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Agenda</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Sintomas</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listarCitas">
+            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+            </div>
+          </div>
+          
+        
+    </header>
+    
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./script/main.js"></script>
+</body>
+
+</html>

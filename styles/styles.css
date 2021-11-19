@@ -1,0 +1,22 @@
+html {
+    min-height: 50%;
+}
+body {
+    font-family: sans-serif;
+    min-height: 50%;
+    font-size: 13px;
+}
+
+header {
+    margin-top: 3rem;
+}
+
+
+.label {
+font-size: 20px;
+    color: white;
+}
+
+#btnBuscar{
+    height: 30px;
+}
